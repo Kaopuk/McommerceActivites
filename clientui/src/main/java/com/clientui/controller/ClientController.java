@@ -1,9 +1,11 @@
 package com.clientui.controller;
 
 import com.clientui.beans.CommandeBean;
+import com.clientui.beans.ExpeditionBean;
 import com.clientui.beans.PaiementBean;
 import com.clientui.beans.ProductBean;
 import com.clientui.proxies.MicroserviceCommandeProxy;
+import com.clientui.proxies.MicroserviceExpeditionProxy;
 import com.clientui.proxies.MicroservicePaiementProxy;
 import com.clientui.proxies.MicroserviceProduitsProxy;
 import org.slf4j.Logger;
@@ -15,10 +17,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -34,22 +36,25 @@ public class ClientController {
     @Autowired
     private MicroservicePaiementProxy paiementProxy;
 
+    @Autowired
+    private MicroserviceExpeditionProxy expeditionProxy;
+
 
     Logger log = LoggerFactory.getLogger(this.getClass());
 
     /*
-    * Étape (1)
-    * Opération qui récupère la liste des produits et on les affichent dans la page d'accueil.
-    * Les produits sont récupérés grâce à ProduitsProxy
-    * On fini par rentourner la page Accueil.html à laquelle on passe la liste d'objets "produits" récupérés.
-    * */
+     * Étape (1)
+     * Opération qui récupère la liste des produits et on les affichent dans la page d'accueil.
+     * Les produits sont récupérés grâce à ProduitsProxy
+     * On fini par rentourner la page Accueil.html à laquelle on passe la liste d'objets "produits" récupérés.
+     * */
     @RequestMapping("/")
-    public String accueil(Model model){
+    public String accueil(Model model) {
 
 
         log.info("Envoi requête vers microservice-produits");
 
-        List<ProductBean> produits =  ProduitsProxy.listeDesProduits();
+        List<ProductBean> produits = ProduitsProxy.listeDesProduits();
 
         model.addAttribute("produits", produits);
 
@@ -58,12 +63,12 @@ public class ClientController {
     }
 
     /*
-    * Étape (2)
-    * Opération qui récupère les détails d'un produit
-    * On passe l'objet "produit" récupéré et qui contient les détails en question à  FicheProduit.html
-    * */
+     * Étape (2)
+     * Opération qui récupère les détails d'un produit
+     * On passe l'objet "produit" récupéré et qui contient les détails en question à  FicheProduit.html
+     * */
     @RequestMapping("/details-produit/{id}")
-    public String ficheProduit(@PathVariable int id,  Model model){
+    public String ficheProduit(@PathVariable int id, Model model) {
 
         ProductBean produit = ProduitsProxy.recupererUnProduit(id);
 
@@ -73,11 +78,11 @@ public class ClientController {
     }
 
     /*
-    * Étape (3) et (4)
-    * Opération qui fait appel au microservice de commande pour placer une commande et récupérer les détails de la commande créée
-    * */
+     * Étape (3) et (4)
+     * Opération qui fait appel au microservice de commande pour placer une commande et récupérer les détails de la commande créée
+     * */
     @RequestMapping(value = "/commander-produit/{idProduit}/{montant}")
-    public String passerCommande(@PathVariable int idProduit, @PathVariable Double montant,  Model model){
+    public String passerCommande(@PathVariable int idProduit, @PathVariable Double montant, Model model) {
 
 
         CommandeBean commande = new CommandeBean();
@@ -98,11 +103,11 @@ public class ClientController {
     }
 
     /*
-    * Étape (5)
-    * Opération qui fait appel au microservice de paiement pour traiter un paiement
-    * */
+     * Étape (5)
+     * Opération qui fait appel au microservice de paiement pour traiter un paiement
+     * */
     @RequestMapping(value = "/payer-commande/{idCommande}/{montantCommande}")
-    public String payerCommande(@PathVariable int idCommande, @PathVariable Double montantCommande, Model model){
+    public String payerCommande(@PathVariable int idCommande, @PathVariable Double montantCommande, Model model) {
 
         PaiementBean paiementAExcecuter = new PaiementBean();
 
@@ -116,9 +121,16 @@ public class ClientController {
 
         Boolean paiementAccepte = false;
         //si le code est autre que 201 CREATED, c'est que le paiement n'a pas pu aboutir.
-        if(paiement.getStatusCode() == HttpStatus.CREATED)
-                paiementAccepte = true;
+        if (paiement.getStatusCode() == HttpStatus.CREATED)
+            paiementAccepte = true;
 
+
+        ExpeditionBean expeditionSuivie = new ExpeditionBean();
+        expeditionSuivie.setId(0);
+        expeditionSuivie.setEtat(1);
+        expeditionSuivie.setIdCommande(idCommande);
+        expeditionProxy.ajouterUneExpedition(expeditionSuivie);
+        model.addAttribute("expedition", expeditionSuivie);
         model.addAttribute("paiementOk", paiementAccepte); // on envoi un Boolean paiementOk à la vue
 
         return "confirmation";
@@ -127,6 +139,21 @@ public class ClientController {
     //Génére une serie de 16 chiffres au hasard pour simuler vaguement une CB
     private Long numcarte() {
 
-        return ThreadLocalRandom.current().nextLong(1000000000000000L,9000000000000000L );
+        return ThreadLocalRandom.current().nextLong(1000000000000000L, 9000000000000000L);
     }
+
+    /*
+     * Étape (6)
+     * Opération qui fait appel au microservice d'expedition pour récupérer une expédition
+     * */
+    @RequestMapping("/suivi/{idCommande}")
+    public String etatExpedition(@PathVariable Integer idCommande, Model model) {
+
+        Optional<ExpeditionBean> exp = expeditionProxy.etatExpedition(idCommande);
+        ExpeditionBean expedition = exp.get();
+        model.addAttribute("expedition", expedition);
+
+        return "EtatExpedition";
+    }
+
 }
