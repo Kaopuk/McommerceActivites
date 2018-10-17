@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ef4e892-f79e-4edd-a115-8735fa2cdc41" name="Default" comment="microservice expedition implanter et config server externaliser">
-      <change afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/ExpeditionBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceExpeditionProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientui/src/main/resources/templates/EtatExpedition.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/dao/ExpeditionDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/model/Expedition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/web/controller/ExpeditionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/web/exceptions/ExpeditionNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/web/exceptions/ImpossibleAjouterExpeditionException.java" afterDir="false" />
+    <list default="true" id="1ef4e892-f79e-4edd-a115-8735fa2cdc41" name="Default" comment="microservice expedition fait et fonctionnelle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clientui/src/main/resources/templates/Confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/clientui/src/main/resources/templates/Confirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-expedition/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-expedition/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/MicroserviceExpeditionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/MicroserviceExpeditionApplication.java" afterDir="false" />
     </list>
     <ignored path="Mcommerce-SpringAdmin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +39,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="8" />
-          <entry key="java" value="38" />
+          <entry key="java" value="40" />
           <entry key="properties" value="12" />
           <entry key="xml" value="5" />
         </counts>
@@ -55,25 +47,25 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="8" />
-          <entry key="JAVA" value="38" />
+          <entry key="JAVA" value="40" />
           <entry key="Properties" value="12" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="21" />
-          <entry key="java" value="366" />
+          <entry key="html" value="25" />
+          <entry key="java" value="387" />
           <entry key="properties" value="11" />
-          <entry key="txt" value="79" />
+          <entry key="txt" value="127" />
           <entry key="xml" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="21" />
-          <entry key="JAVA" value="366" />
-          <entry key="PLAIN_TEXT" value="79" />
+          <entry key="HTML" value="25" />
+          <entry key="JAVA" value="387" />
+          <entry key="PLAIN_TEXT" value="127" />
           <entry key="Properties" value="11" />
           <entry key="XML" value="58" />
         </counts>
@@ -85,38 +77,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clientui/src/main/java/com/clientui/beans/ExpeditionBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-              <folding>
-                <element signature="e#199#200#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
-                <element signature="e#285#286#0" expanded="true" />
-                <element signature="e#319#320#0" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#473#474#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#569#570#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clientui/src/main/resources/templates/EtatExpedition.html">
+        <entry file="file://$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/MicroserviceExpeditionApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state relative-caret-position="119">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#b#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#b#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,6 +145,7 @@
         <option value="$PROJECT_DIR$/clientui/src/main/java/com/clientui/proxies/MicroserviceExpeditionProxy.java" />
         <option value="$PROJECT_DIR$/clientui/src/main/java/com/clientui/controller/ClientController.java" />
         <option value="$PROJECT_DIR$/clientui/src/main/resources/templates/EtatExpedition.html" />
+        <option value="$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/MicroserviceExpeditionApplication.java" />
       </list>
     </option>
   </component>
@@ -418,84 +386,33 @@
           <expand>
             <path>
               <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
+              <item name="microservice-expedition" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
+              <item name="microservice-expedition" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
+              <item name="microservice-expedition" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
+              <item name="microservice-expedition" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
+              <item name="microservice-expedition" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="configuration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="proxies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="McommerceActivites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clientui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="microserviceexpedition" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -505,6 +422,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -512,7 +430,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539781516077" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539787101040" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v8.4.0/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/microservice-expedition" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -538,7 +456,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ClientUiApplication">
+  <component name="RunManager" selected="Spring Boot.ZuulServerApplication">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -904,7 +822,7 @@
       <workItem from="1524953121156" duration="1209000" />
       <workItem from="1524991128168" duration="14723000" />
       <workItem from="1525209024581" duration="3928000" />
-      <workItem from="1539760263134" duration="11527000" />
+      <workItem from="1539760263134" duration="14788000" />
     </task>
     <task id="LOCAL-00001" summary="config server">
       <created>1539764585193</created>
@@ -920,11 +838,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539765313456</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="microservice expedition fait et fonctionnelle">
+      <created>1539781656400</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539781656400</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40660000" />
+    <option name="totallyTimeSpent" value="43921000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -933,7 +858,7 @@
       <window_info id="Image Layers" />
       <window_info id="Web" side_tool="true" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17643923" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17643923" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -942,7 +867,7 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32480535" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32369298" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -983,20 +908,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="config server" />
     <MESSAGE value="microservice expedition implanter et config server externaliser" />
-    <option name="LAST_COMMIT_MESSAGE" value="microservice expedition implanter et config server externaliser" />
+    <MESSAGE value="microservice expedition fait et fonctionnelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="microservice expedition fait et fonctionnelle" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/microservice-produits/src/main/java/com/mproduits/MproduitsApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zuul-server/src/main/java/com/mcommerce/zuulserver/filters/LogFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1363,12 +1282,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clientui/src/main/resources/templates/EtatExpedition.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="321">
+          <caret line="26" column="79" lean-forward="true" selection-start-line="26" selection-start-column="79" selection-end-line="26" selection-end-column="79" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#b#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#b#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/microservice-expedition/src/main/java/com/microserviceexpedition/microserviceexpedition/MicroserviceExpeditionApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
